@@ -20,17 +20,7 @@ export class MenuTrigger extends Component {
     const { Touchable, defaultTouchableProps } = makeTouchable(customStyles.TriggerTouchableComponent);
     return (
       <View ref={onRef} collapsable={false} style={customStyles.triggerOuterWrapper}>
-        <Touchable
-          testID={testID}
-          onPress={triggerOnLongPress ? onAlternativeAction : onPress}
-          onLongPress={triggerOnLongPress ? onPress : onAlternativeAction}
-          {...defaultTouchableProps}
-          {...customStyles.triggerTouchable}
-        >
-          <View {...other} style={[customStyles.triggerWrapper, style]}>
-            {text ? <Text style={customStyles.triggerText}>{text}</Text> : children}
-          </View>
-        </Touchable>
+        
       </View>
     );
   }
