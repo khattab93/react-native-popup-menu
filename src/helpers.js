@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, TouchableHighlight, TouchableNativeFeedback } from 'react-native';
+import { Platform, TouchableHighlight, TouchableOpacity } from 'react-native';
 
 /**
  * Promisifies measure's callback function and returns layout object.
@@ -27,7 +27,7 @@ export const makeName = (function() {
  */
 export function makeTouchable(TouchableComponent) {
   const Touchable = TouchableComponent || Platform.select({
-    android: TouchableNativeFeedback,
+    android: TouchableOpacity,
     ios: TouchableHighlight,
     default: TouchableHighlight,
   });
